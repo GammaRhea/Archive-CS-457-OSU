@@ -1,0 +1,4 @@
+
+0(35) : error C1503: undefined variable "glEnable"
+0(35) : error C1503: undefined variable "GL_MULTISAMPLE"
+

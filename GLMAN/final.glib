@@ -1,0 +1,58 @@
+##OpenGL GLIB
+Perspective 70
+LookAt 0 0 3  0 0 0  0 1 0
+
+CubeMap 6 VWposx.bmp VWnegx.bmp  VWposy.bmp VWnegy.bmp   VWposz.bmp VWnegz.bmp
+
+CubeMap 7 VWposx.bmp VWnegx.bmp  VWposy.bmp VWnegy.bmp   VWposz.bmp VWnegz.bmp
+
+Vertex		final.vert
+Fragment	final.frag
+Program    	Final						\
+        	uReflectUnit 6             	\
+           	uRefractUnit 7             	\
+			uA <0.01 5. 10.>			\
+			uK <-5. 0. 15.>				\
+        	uNoiseAmp <0. 0. 5.>		\
+        	uNoiseFreq <0.0 0.1 0.5>	\
+			uEta <1. 1.2 4.>			\
+			uMix <0. 0. 1.>				\
+			uWhiteMix <0. 0.3 1.>
+
+
+PushMatrix
+Rotate -15   1 0 0
+QuadXY  -0.2  2.  300 300
+PopMatrix
+
+
+Vertex		texturef.vert
+Fragment	texturef.frag
+Program Texture								\
+			TexUnit 6						\
+			uScanlineWeight <0. 6. 10.>		\
+			uGapBrightness <0. 0.12 0.5>	\
+			uBloomFactor <0. 1.5 5.>		\
+			uGammaIn <0. 2.4 5.>			\
+			uGammaOut <0. 2.2 5.>			\
+			uMaskType <0 0 2>				\
+			uMaskBrightness <0. 0.7 1.>		\
+			uSharper <false>				
+
+Texture2D  6  VWposx.bmp
+QuadYZ 5. 5. 10 10
+
+Texture2D  6  VWnegx.bmp
+QuadYZ -5. 5. 10
+
+Texture2D  6  VWposy.bmp
+QuadXZ 5. 5. 10 10
+
+Texture2D  6  VWnegy.bmp
+QuadXZ -5. 5. 10 10
+
+Texture2D  6  VWposz.bmp
+QuadXY 5. 5. 10 10
+
+Texture2D  6  VWnegz.bmp
+QuadXY -5. 5. 10 10

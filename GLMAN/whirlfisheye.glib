@@ -1,0 +1,18 @@
+##OpenGL GLIB
+Ortho -1. 1.  -1. 1.
+LookAt  0. 0. 2.  0. 0. 0.  0. 1. 0.
+
+Texture2D  5    YakuzaA.bmp
+Texture2D  6    YakuzaB.bmp
+
+Vertex  		whirlfisheye.vert
+Fragment        whirlfisheye.frag
+Program         WhirlFisheye                    \
+        TexUnitA 5                              \
+        TexUnitB 6                              \
+        uPower <1. 1. 10.>                      \
+        uRtheta <0. 0. 50.>                     \
+        uBlend <0. 0. 1.>                       \
+        uContrast <1. 1. 5.>
+
+QuadXY  0.1  1.

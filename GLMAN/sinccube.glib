@@ -1,0 +1,48 @@
+##OpenGL GLIB
+Perspective 70
+LookAt 0 0 3  0 0 0  0 1 0
+
+CubeMap 6 VWposx.bmp VWnegx.bmp  VWposy.bmp VWnegy.bmp   VWposz.bmp VWnegz.bmp
+
+CubeMap 7 VWposx.bmp VWnegx.bmp  VWposy.bmp VWnegy.bmp   VWposz.bmp VWnegz.bmp
+
+Vertex		sinccube.vert
+Fragment	sinccube.frag
+Program    	SincCube					\
+           	uReflectUnit 6             	\
+           	uRefractUnit 7             	\
+			uA <0.01 5. 10.>			\
+			uK <-5. 0. 15.>				\
+        	uNoiseAmp <0. 0. 5.>		\
+        	uNoiseFreq <0.0 0.1 0.5>	\
+			uEta <1. 1.2 4.>			\
+			uMix <0. 0. 1.>				\
+			uWhiteMix <0. 0.3 1.>
+
+PushMatrix
+Rotate -15   1 0 0
+QuadXY  -0.2  2.  300 300
+PopMatrix
+
+
+Vertex		texture.vert
+Fragment	texture.frag
+Program Texture	TexUnit 6
+
+Texture2D  6  VWposx.bmp
+QuadYZ 5. 5. 10 10
+
+Texture2D  6  VWnegx.bmp
+QuadYZ -5. 5. 10
+
+Texture2D  6  VWposy.bmp
+QuadXZ 5. 5. 10 10
+
+Texture2D  6  VWnegy.bmp
+QuadXZ -5. 5. 10 10
+
+Texture2D  6  VWposz.bmp
+QuadXY 5. 5. 10 10
+
+Texture2D  6  VWnegz.bmp
+QuadXY -5. 5. 10 10

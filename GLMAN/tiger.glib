@@ -1,0 +1,17 @@
+##OpenGL GLIB
+Perspective 70
+LookAt 0 0 3  0 0 0  0 1 0
+
+# Timer 10.
+
+Texture2D  5    WWWater2.bmp
+
+Vertex		tiger.vert
+Fragment	tiger.frag
+Program		Tiger				\
+		TexUnit 5				\
+		rbow <0.1 1. 1.> 		\
+		rBool <false>
+
+QuadXZ 0 50
+Obj tigerstsL.obj
